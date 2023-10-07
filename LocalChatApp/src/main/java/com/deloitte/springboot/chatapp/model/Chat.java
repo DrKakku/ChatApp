@@ -26,7 +26,7 @@ public class Chat {
 	int id; 
 	@ManyToOne()
 	@JoinColumn(name="userId",referencedColumnName = "userId")
-	int userId;
+	User userId;
 	@Column(name="Content", length = 1000)
 	String Content;
 

@@ -15,7 +15,7 @@ import com.deloitte.springboot.chatapp.dao.ChatDao;
 import com.deloitte.springboot.chatapp.model.Chat;
 
 @RestController
-public class UserController {
+public class ChatController {
 	
 	@Autowired
 	ChatDao chatD;
