@@ -1,6 +1,7 @@
 package com.deloitte.springboot.chatapp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -8,14 +9,20 @@ import com.deloitte.springboot.chatapp.dao.UserDao;
 import com.deloitte.springboot.chatapp.model.User;
 
 @Service
+@ComponentScan(basePackages = {"com.deloitte.springboot.chatapp.Service"})
 public class UserService {
 
 	@Autowired
 	private UserDao userDao;
 	
 	 public ResponseEntity<?> register(User user) {
-	        if (userDao.findByUserName(user.getUserName()) != null) {
-	            return ResponseEntity.badRequest().body("Username already exists");
+		 
+		 	
+	        if (userDao.findByUserName(user.getUserName()) != null) {        	
+	        	 return ResponseEntity.badRequest().body("Username already exists");
+	        }
+	        else {
+	        	userDao.save(user);
 	        }
 	        
 	        user.setUserPassword(user.getUserPassword());
