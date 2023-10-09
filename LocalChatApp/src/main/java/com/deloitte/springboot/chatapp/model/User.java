@@ -15,8 +15,7 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class User {
 	
 	public User(int userId, String userName, String userPassword) {

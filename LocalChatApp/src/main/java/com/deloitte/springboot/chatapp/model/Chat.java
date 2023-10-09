@@ -20,14 +20,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Chat {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id")
 	int id; 
 	@ManyToOne()
 	@JoinColumn(name="userId",referencedColumnName = "userId")
-	User userId;
+	User user;
 	@Column(name="Content", length = 1000)
 	String Content;
+	
+	
+	public Chat(User user, String content) {
+		this.user = user;
+		this.Content = content;
+		
+	}
+	
+	
 
 }

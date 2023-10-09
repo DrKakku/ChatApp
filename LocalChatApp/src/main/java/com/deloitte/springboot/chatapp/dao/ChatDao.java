@@ -13,7 +13,7 @@ import com.deloitte.springboot.chatapp.model.Chat;
 public interface ChatDao extends JpaRepository<Chat, Integer> {
 	
 	
-	@Query(value = "Select * from Chat LIMIT :n ORDER BY Id DESC",nativeQuery = true)
+	@Query(value = "Select * from Chat ORDER BY Id DESC LIMIT :n ;",nativeQuery = true)
 	public List<Chat> getNChatRecords(int n);
 
 }
