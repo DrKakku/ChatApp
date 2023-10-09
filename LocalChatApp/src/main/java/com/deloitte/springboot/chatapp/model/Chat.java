@@ -21,6 +21,36 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Chat {
 	
+	public int getUserId() {
+		return id;
+	}
+
+
+	public void setUserId(int id) {
+		this.id = id;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+	public String getContent() {
+		return Content;
+	}
+
+
+	public void setContent(String content) {
+		Content = content;
+	}
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id")
